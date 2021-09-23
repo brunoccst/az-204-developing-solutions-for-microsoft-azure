@@ -75,5 +75,6 @@ Based on [Exam AZ-204: Developing Solutions for Microsoft Azure – Skills Measu
 
 ---
 
-[Previous page](https://github.com/brunoccst/az-204-developing-solutions-for-microsoft-azure/blob/main/README.md)
-[Next page](www.google.com)
+[<< Previous page](https://github.com/brunoccst/az-204-developing-solutions-for-microsoft-azure/blob/main/README.md)
+|
+[Next page >>](www.google.com)
