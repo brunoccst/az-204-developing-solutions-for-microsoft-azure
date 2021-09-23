@@ -3,4 +3,10 @@ A repository with my notes for studying for the [Exam AZ-204: Developing Solutio
 
 ## How to use it
 This repository is divided into chapters.
-You can click [here](https://github.com/brunoccst/az-204-developing-solutions-for-microsoft-azure/blob/main/chapters/skills-measured.md) to start from the first chapter or simply open the [chapters](https://github.com/brunoccst/az-204-developing-solutions-for-microsoft-azure/tree/main/chapters) folder and select the chapter you want.
+Use the text links in the end of the page to navigate through the pages.
+
+If you want to check a specific chapter, you can simply open the [chapters](https://github.com/brunoccst/az-204-developing-solutions-for-microsoft-azure/tree/main/chapters) folder and select the chapter you want.
+
+---
+
+[Next page >>](https://github.com/brunoccst/az-204-developing-solutions-for-microsoft-azure/blob/main/chapters/skills-measured.md)
