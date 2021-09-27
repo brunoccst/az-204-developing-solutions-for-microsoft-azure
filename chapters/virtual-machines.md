@@ -5,6 +5,6 @@ Some description
 
 ---
 
-[<< Previous page](skills-measured)
+[<< Previous page](skills-measured.md)
 |
 [Next page >>](www.google.com)
