@@ -77,4 +77,4 @@ Based on [Exam AZ-204: Developing Solutions for Microsoft Azure – Skills Measu
 
 [<< Previous page](../README.md)
 |
-[Next page >>](www.google.com)
+[Next page >>](virtual-machines)
