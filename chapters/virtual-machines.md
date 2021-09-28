@@ -14,7 +14,7 @@ When you select a VM instance from a specific range (around the mid price to the
 * 3 year reserved (~78% discount)
 
 If you are sure you're going to use a VM for a year or three years, selecting the respective payment commitment can save you money.
-If you choose the _pay as you go_ option, you will be charged the standard way - per hour.
+If you choose the _pay as you go_ option, you will be charged the standard way - per usage.
 
 You can also select whether you want the compute payment to be done **monthly** or **upfront**.
 
