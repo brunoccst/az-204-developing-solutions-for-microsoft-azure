@@ -20,7 +20,7 @@ If you choose the _pay as you go_ option, you will be charged the standard way -
 
 You can also select whether you want the compute payment to be done **monthly** or **upfront**.
 
-## Creating a VM
+## Creating a VM - Basics
 
 When creating a VM, you will find the following options:
 
@@ -87,6 +87,10 @@ You can choose multiple ports between the following:
 ### Save money
 
 If you already have a Windows Server license, you can use it in this VM and save almost half of the costs.
+
+## Creating a VM - Disks
+
+
 
 ---
 
