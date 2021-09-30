@@ -68,6 +68,7 @@ You can select if it's either a _yes_ or _no_.
 #### Size
 
 The size & processing power configuration of your machine, e.g.: CPU, memory size, etc.
+The recommended size is **Standard DS1**.
 
 ### Administrator account
 
