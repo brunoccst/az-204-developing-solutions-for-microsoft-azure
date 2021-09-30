@@ -145,4 +145,4 @@ Some important commands to know are:
 
 [<< Previous page](skills-measured.md)
 |
-[Next page >>](www.google.com)
+[Next page >>](app-service.md)
