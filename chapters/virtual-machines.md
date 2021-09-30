@@ -1,7 +1,7 @@
 # Virtual Machines
 A Virtual Machine (VM) is the virtualization/emulation of a computer system. In other words, a Virtual Machine is a server that _acts and looks like_ a physical machine: you have control over it, you can install/uninstall software in it and configure it as you want, however, you have no control over the physical machine. You can usually access such VMs with an Remote Desktop Protocol tool, such as Remote Desktop Connection, and manage the VM as you would in your own machine.
 
-In Azure, you can choose between a variety of VM sizes, depending on your needs: general usage; memory optimization; CPU optimazation; etc.
+Azure provides Virtual Machines as _Infrastructure as a Service_ (IaaS). You can choose between a variety of VM sizes, depending on your needs: general usage; memory optimization; CPU optimazation; etc.
 Each size specification also affects the pricing. You are also limited to use either Windows or Linux systems (and their versions/variations).
 All Azure VM have their own public IP address, meaning that you can access it from the outside - unless specifically set not to.
 
@@ -24,7 +24,7 @@ You can also select whether you want the compute payment to be done **monthly** 
 
 When creating a VM, you will find the following options:
 
-![creating-a-vm-in-azure-portal](https://user-images.githubusercontent.com/13342183/135273657-92c11607-de48-48aa-9174-52568482a9b7.png)
+![creating-a-virtual-machine-basics](https://user-images.githubusercontent.com/13342183/135273657-92c11607-de48-48aa-9174-52568482a9b7.png)
 
 ### Project details
 
@@ -83,6 +83,7 @@ You can choose multiple ports between the following:
 * SSH (22)
 * RDP (3389)
 
+Note: if you want your machine to be accessible through RDP, enable the RDP port.
 
 ### Save money
 
@@ -90,7 +91,54 @@ If you already have a Windows Server license, you can use it in this VM and save
 
 ## Creating a VM - Disks
 
+All Virtual Machines require a disk to store the internal workings of it (e.g.: C:/, D:/, etc.).
+You can select which disk configuration you want at the _Disk_ tab.
 
+![creating-a-virtual-machine-disk](https://user-images.githubusercontent.com/13342183/135426773-abe847b8-8157-4200-b720-88e4b65d649a.png)
+
+### OS disk type
+
+The type of disk system you want.
+
+**Azure recommmends Premium SSD**, but you can also select downgraded versions like _Standard SSD_ or _Standard HDD_ - only downgrade it if you really have a good reason for it.
+
+### Encryption type
+
+How your VM disk data is encrypted.
+
+The default value is the **(Default) Encryption at-rest with platform-managed key**, where Azure manages the encryption for you.
+If you have a requirement for you to manage the key (e.g.: a very high secure system like banks, bitcoin miner, etc.), you can choose the _Encryption at-rest with a customer-managed key_ and define the encryption (e.g.: using Azure Data Vault to generate keys).
+
+### Data disks
+
+Additional disks you can add to your VM. It's a separate disk that you can attach/detach from a VM to another.
+
+You can set the disk configuration, such as its size, disk tier, max. IOPS and max throughput.
+Note that if you have a minimum IOPS requirement and you're using an downgraded disk (e.g.: Standard HDD) it may be better to upgrade the disk instead of changing it for a bigger one.
+
+## Creating a VM - Network
+
+At the network configuration you can set its virtual network, public IP (optional), virtual inbound rules as well as some other configurations.
+
+![creating-a-virtual-machine-network](https://user-images.githubusercontent.com/13342183/135428887-36d7ec29-6311-40cb-b77e-14b02479efb6.png)
+
+## Creating a VM - Management
+
+At the management tab you can define some management tasks and configurations, such as monitoring (e.g.: boot diagnostics) as well as auto-shutdown and backups.
+
+![creating-a-virtual-machine-management](https://user-images.githubusercontent.com/13342183/135429692-f8b999bb-df92-4d65-8827-503d257edb3d.png)
+
+Note that the **auto-shutdown** is usually a good idea if you don't need the VM to be up 24/7, e.g.: development machines.
+You can set a specific interval where the VM is down so you can save some costs.
+
+## PowerShell / Azure CloudShell
+
+Some important commands to know are:
+* _**Connect-AzAccount**_: authenticate yourself so you can perform actions on Azure.
+* _**Get-AzVM**_: show all current created VMs. CLI version: _az vm list_.
+* _**New-AzResourceGroup** -Name <name, e.g.: testgrp> -Location <location, e.g.: EastUS>_: creates a resource group (all VMs must be inside a resource group). CLI version: _az group create_.
+* _**New-AzVM** -ResourceGroupName <res.group name, e.g.: testgrp> -Name <VM name, e.g.: testvm> -VirtualNetworkName <VM network name> -OpenPorts <open ports, e.g.: 3389>_: creates a new Azure VM. CLI version: _az vm create_.
+* _**Stop-AzVM** -Name <VM name, e.g.: testvm> -ResourceGroupName <resource group name>_: stops a VM. CLI version: _az vm stop_.
 
 ---
 
